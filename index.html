@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="img/logo.png" class="logo">
+            <nav>
+                <ul id="menuList">
+                    <li><a href="">Game controllers</a></li>
+                    <li><a href="">VR accessories</a></li>
+                    <li><a href="">PS store</a></li>
+                    <li><a href="">Others</a></li>
+                </ul>
+            </nav>
+            <img src="img/menu.png" class="menu-icon" onclick="togglemenu()">
+        </div>
+
+        <div class="row">
+            <div class="col-1">
+                <h2>PS5 dualsense controller</h2>
+                <h3>DualSense™ Wireless Control</h3>
+                <h4>$69.99</h4>
+                <button type="button" class="wrapper">
+                    Buy now <img src="img/next.png">
+                </button>
+            </div>
+            <div class="col-2">
+                <img src="img/dualsense.png" class="dualsense">
+                <div class="box-color"></div>
+            </div>
+        </div>
+        <div class="social">
+            <img src="img/facebook.png">
+            <img src="img/instagram.png">
+            <img src="img/twitter.png">
+        </div>
+    </div>
+    <script>
+        var menuList = document.getElementById("menuList");
+        menuList.style.maxHeight = "0px";
+        function togglemenu() {
+            if (menuList.style.maxHeight == "0px") {
+                menuList.style.maxHeight = "130px";
+            } else {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
