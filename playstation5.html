@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS Simulation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            padding-left: 8%;
+            padding-right: 8%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            cursor: pointer;
+            margin: 30px 0;
+        }
+
+        .menu-icon {
+            width: 25px;
+            cursor: pointer;
+            display: none;
+        }
+
+        nav {
+            flex: 1;
+            text-align: right;
+        }
+
+        nav ul li {
+            list-style: none;
+            display: inline-block;
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            padding: 10px 10px;
+        }
+
+        nav ul li a:hover {
+            color: white;
+            background: linear-gradient(to right, #045ab2, #003087);
+            border-radius: 20px;
+            padding: 10px 10px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 100px 0;
+        }
+
+        .col-2 {
+            flex-basis: 40%;
+            position: relative;
+            margin-left: 50px;
+        }
+
+        .col-2 h2 {
+            font-size: 54px;
+        }
+
+        .col-2 h3 {
+            font-size: 30px;
+            color: #003087;
+            font-weight: 100;
+            margin: 20px 0 10px;
+        }
+
+        .col-2 h4 {
+            margin: 30px 0;
+            font-size: 20px;
+        }
+
+        button {
+            width: 160px;
+            border: 0;
+            padding: 12px 10px;
+            outline: none;
+            color: white;
+            font-size: 16px;
+            background: linear-gradient(to right, #045ab2, #003087);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: width 0.5s;
+            font-weight: 54px;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #003087, #045ab2);
+            width: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 54px;
+        }
+
+        button img {
+            width: 18px;
+            display: none;
+        }
+
+        button:hover img {
+            display: block;
+        }
+
+        .col-1 {
+            position: relative;
+            flex-basis: 60%;
+            display: flex;
+            align-items: center;
+        }
+
+        .col-1 .ps5 {
+            width: 85%;
+            overflow: hidden;
+        }
+
+        .col-1:hover .ps5 {
+            transform: scale(1.1);
+            -moz-transform: scale(1.1);
+        }
+
+        .box-color {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: linear-gradient(to left, #003087, #045ab2);
+            border-radius: 20% 80% 35% 65% / 89% 15% 85% 11%;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            transform: t translateX(-150px);
+        }
+
+        .social {
+            text-align: center;
+        }
+
+        .social img {
+            height: 25px;
+            margin: 20px;
+            cursor: pointer;
+            margin-bottom: 200px;
+        }
+
+        @media only screen and (max-width: 700px) {
+            nav ul {
+                width: 100%;
+                background: linear-gradient(to right, #003087, #045ab2);
+                position: absolute;
+                top: 75px;
+                right: 0;
+                z-index: 2;
+                margin-top: 15px;
+            }
+
+            nav ul li {
+                display: block;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                color: white;
+
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .menu-icon:focus {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+
+            #menuList {
+                overflow: hidden;
+                transition: 0.5s;
+            }
+
+            .row {
+                flex-direction: column-reverse;
+                margin: 50px 0;
+            }
+
+            .col-1 {
+                flex-basis: 100%;
+                margin-bottom: 50px;
+            }
+
+            .col-1 .ps5 {
+                width: 77%;
+            }
+
+            .box-color {
+                transform: translateX(75px);
+                transform: translateY(20px);
+            }
+
+            .col-2 {
+                flex-basis: 100%;
+            }
+
+            .col-2 h2 {
+                font-size: 35px;
+            }
+
+            .col-2 h3 {
+                font-size: 15px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="index.html"><img src="img/logo.png" class="logo"></a>
+            <nav>
+                <ul id="menuList">
+                    <li><a href="playstation5.html">PlayStation 5</a></li>
+                    <li><a href="vr-accesories.html">PS VR</a></li>
+                    <li><a href="ps-store.html">PS store</a></li>
+                    <li><a href="others.html">Others</a></li>
+                </ul>
+            </nav>
+            <img src="img/menu.png" class="menu-icon" onclick="togglemenu()">
+        </div>
+
+        <div class="row">
+            <div class="col-1">
+                <img src="img/ps5.png" class="ps5">
+                <div class="box-color"></div>
+            </div>
+            <div class="col-2">
+                <h2>PlayStation 5 Console</h2>
+                <h3>PS5 with Ultra HD<br> Blu-Ray Disc Drive</h3>
+                <h4>$499.99</h4>
+                <button type="button" class="wrapper">
+                    <img src="img/prev.png"> Buy now
+                </button>
+            </div>
+        </div>
+
+        <div class="social">
+            <img src="img/facebook.png">
+            <img src="img/instagram.png">
+            <img src="img/twitter.png">
+        </div>
+    </div>
+    <script>
+        var menuList = document.getElementById("menuList");
+        menuList.style.maxHeight = "0px";
+        function togglemenu() {
+            if (menuList.style.maxHeight == "0px") {
+                menuList.style.maxHeight = "130px";
+            } else {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
